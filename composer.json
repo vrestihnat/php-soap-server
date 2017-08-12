@@ -1,0 +1,19 @@
+{
+	"name": "vrestihnat/php-soap-server",
+	"description": "Soap server zalozeny na Zend soap server, kompatibilni s JAVA a .NET",
+	"config": {
+		"secure-http": false,
+		"vendor-dir": "src/vendor"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"zendframework/zend-soap": "^2.6",
+		"zendframework/zend-config": "^2.6"
+	},
+	"autoload": {
+		"psr-4": {
+			"Vrestihnat\\": "src"
+		}
+	}
+}

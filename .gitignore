@@ -1,0 +1,13 @@
+*.swp
+.project
+.settings
+.buildpath
+nbproject
+composer.lock
+composer.phar
+src/vendor/
+.htaccess
+src/.htaccess
+
+
+/src/config/autoload/production.php

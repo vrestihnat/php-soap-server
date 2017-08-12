@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://bflm.eu/php-soap-server?wsdl" uri="xml-resources/web-service-references/php-soap-server/wsdl/bflm.eu/php-soap-server/.wsdl"/>
+    <system systemId="http://bflm.eu/php-soap-server/soap.php?wsdl" uri="xml-resources/web-service-references/php-soap-server/wsdl/bflm.eu/php-soap-server/soap.php.wsdl"/>
+</catalog>

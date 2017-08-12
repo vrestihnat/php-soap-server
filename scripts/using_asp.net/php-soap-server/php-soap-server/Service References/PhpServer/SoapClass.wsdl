@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://bflm.eu/php-soap-server/soap.php" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="SoapClass" targetNamespace="http://bflm.eu/php-soap-server/soap.php" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bflm.eu/php-soap-server/soap.php">
+      <xsd:element name="getDateTime">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getDateTimeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getDateTimeResult" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getHash">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:complexType name="HashResponse">
+        <xsd:all>
+          <xsd:element name="hash" nillable="true" type="xsd:string" />
+          <xsd:element name="createdBy" nillable="true" type="xsd:string" />
+          <xsd:element name="url" nillable="true" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:element name="getHashResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getHashResult" type="tns:HashResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getDateTimeIn">
+    <wsdl:part name="parameters" element="tns:getDateTime" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeOut">
+    <wsdl:part name="parameters" element="tns:getDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHashIn">
+    <wsdl:part name="parameters" element="tns:getHash" />
+  </wsdl:message>
+  <wsdl:message name="getHashOut">
+    <wsdl:part name="parameters" element="tns:getHashResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SoapClassPort">
+    <wsdl:operation name="getDateTime">
+      <documentation>Testovaci rfc, vraci aktualni datum a cas</documentation>
+      <wsdl:input message="tns:getDateTimeIn" />
+      <wsdl:output message="tns:getDateTimeOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHash">
+      <documentation>Testovaci rfc, vraci ukazkovy model HashResponse</documentation>
+      <wsdl:input message="tns:getHashIn" />
+      <wsdl:output message="tns:getHashOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapClassBinding" type="tns:SoapClassPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDateTime">
+      <soap:operation soapAction="http://bflm.eu/php-soap-server/soap.php#getDateTime" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://schemas.xmlsoap.org/soap/http" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://schemas.xmlsoap.org/soap/http" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHash">
+      <soap:operation soapAction="http://bflm.eu/php-soap-server/soap.php#getHash" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://schemas.xmlsoap.org/soap/http" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://schemas.xmlsoap.org/soap/http" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SoapClassService">
+    <wsdl:port name="SoapClassPort" binding="tns:SoapClassBinding">
+      <soap:address location="http://bflm.eu/php-soap-server/soap.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

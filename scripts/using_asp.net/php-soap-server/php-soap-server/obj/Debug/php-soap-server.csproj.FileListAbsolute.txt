@@ -1,0 +1,5 @@
+C:\Users\zaruba04\Documents\Visual Studio 2008\Projects\php-soap-server\php-soap-server\bin\php-soap-server.dll
+C:\Users\zaruba04\Documents\Visual Studio 2008\Projects\php-soap-server\php-soap-server\bin\php-soap-server.pdb
+C:\Users\zaruba04\Documents\Visual Studio 2008\Projects\php-soap-server\php-soap-server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\zaruba04\Documents\Visual Studio 2008\Projects\php-soap-server\php-soap-server\obj\Debug\php-soap-server.dll
+C:\Users\zaruba04\Documents\Visual Studio 2008\Projects\php-soap-server\php-soap-server\obj\Debug\php-soap-server.pdb
